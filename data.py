@@ -9,6 +9,7 @@ results.raise_for_status()
 
 question_data = results.json()['results']
 
+
 # question_data = [
 #     {
 #         "category": "Science: Computers",
