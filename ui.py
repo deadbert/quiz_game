@@ -39,14 +39,13 @@ class QuizInterface:
     def get_next_question(self):
         self.question_box.itemconfig(self.question_text, text=self.quiz.next_question())
         self.question_box.config(background='white')
+        self.score_label.config(text=f"Score: {self.quiz.score}")
 
     def answer_true(self):
         self.user_feedback(self.quiz.check_answer(True))
-        self.score_label.config(text=f"Score: {self.quiz.score}")
 
     def answer_false(self):
         self.user_feedback(self.quiz.check_answer(False))
-        self.score_label.config(text=f"Score: {self.quiz.score}")
 
     def user_feedback(self, answer: bool):
         if answer:
